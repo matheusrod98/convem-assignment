@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms'
-import { Router } from '@angular/router';
 
-import { InputComponent } from './../input/input.component';
 
 import { HireValidationService } from '../../services/hire-validation.service';
 
@@ -15,17 +13,10 @@ import { HireValidationService } from '../../services/hire-validation.service';
 
 export class QuestionComponent {
 
-    constructor(public hireValidationService: HireValidationService, private router: Router) {}
+    res: any;
+    constructor(public hireValidationService: HireValidationService) {}
 
     sendInput(data:NgForm) {
         this.hireValidationService.validateHiring(data);
-        console.log(this.hireValidationService.isHired);
-        if (this.hireValidationService.isHired == true) {
-            this.router.navigate(['success']);
-        }
-        else {
-            this.router.navigate(['error']);
-        }
-
     }
 }

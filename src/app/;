@@ -1,22 +1,26 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms'
 import { Router } from '@angular/router';
 
+import { InputComponent } from './../input/input.component';
+
 import { HireValidationService } from '../../services/hire-validation.service';
 
+
 @Component({
-  selector: 'app-input',
-  templateUrl: './input.component.html',
-  styleUrls: ['./input.component.css']
+  selector: 'app-question',
+  templateUrl: './question.component.html',
+  styleUrls: ['./question.component.css']
 })
 
-export class InputComponent {
+export class QuestionComponent {
 
+    res: any;
     constructor(public hireValidationService: HireValidationService, private router: Router) {}
 
     sendInput(data:NgForm) {
-        this.hireValidationService.validateHiring(data);
-        if (HireValidationService.isHired.hired == "success") {
+        this.res = this.hireValidationService.validateHiring(data);
+        if (this.res.isHired == true) {
             this.router.navigate(['success']);
         }
         else {
