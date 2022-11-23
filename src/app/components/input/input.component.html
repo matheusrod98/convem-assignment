@@ -1,5 +1,16 @@
-<form #userInput="ngForm" (submit)="sendInput(userInput.value.text)">
-	<div class="input-form">
-		<input type="text" ngModel name="text" id="text" class="input-form" placeholder="Sim ou Não">
-	</div>
-</form>
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.1/css/all.css" crossorigin="anonymous">
+</head>
+
+<div class="input-container">
+	<form #userInput="ngForm" (submit)="sendInput(userInput.value.text)">
+		<div class="input-form">
+			<input type="text" ngModel name="text" id="text" class="input-form" placeholder="Sim ou Não">
+		</div>
+	    <div class="submit-button">
+		<button class="button" type="submit">
+		    <i class="fa-solid fa-check"></i>
+		</button>
+	    </div>
+	</form>
+</div>

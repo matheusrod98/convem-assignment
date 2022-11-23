@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ButtonComponent } from './components/button/button.component';
 import { InputComponent } from './components/input/input.component';
 import { DisplayComponent } from './components/display/display.component';
 import { SuccessComponent } from './components/success/success.component';
@@ -15,7 +14,6 @@ import { QuestionComponent } from './components/question/question.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ButtonComponent,
     InputComponent,
     DisplayComponent,
     SuccessComponent,

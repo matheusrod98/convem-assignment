@@ -6,6 +6,6 @@
     flex-direction: column-reverse;
 }
 
-.user-input-container {
+.input-container {
     display: flex;
 }
