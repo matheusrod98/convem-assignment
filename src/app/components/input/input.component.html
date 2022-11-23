@@ -1,3 +1,5 @@
-<div class="input-form">
-	<input type="text" class="input-form" placeholder="Sim ou Não">
-</div>
+<form #userInput="ngForm" (submit)="sendInput(userInput.value.text)">
+	<div class="input-form">
+		<input type="text" ngModel name="text" id="text" class="input-form" placeholder="Sim ou Não">
+	</div>
+</form>

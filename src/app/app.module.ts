@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ButtonComponent } from './components/button/button.component';
@@ -7,6 +8,7 @@ import { InputComponent } from './components/input/input.component';
 import { DisplayComponent } from './components/display/display.component';
 import { SuccessComponent } from './components/success/success.component';
 import { ErrorComponent } from './components/error/error.component';
+import { QuestionComponent } from './components/question/question.component';
 
 @NgModule({
   declarations: [
@@ -15,10 +17,12 @@ import { ErrorComponent } from './components/error/error.component';
     InputComponent,
     DisplayComponent,
     SuccessComponent,
-    ErrorComponent
+    ErrorComponent,
+    QuestionComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
