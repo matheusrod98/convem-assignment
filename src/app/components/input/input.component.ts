@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms'
 
+import { HireValidationService } from '../../services/hire-validation.service';
+
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
@@ -8,7 +10,9 @@ import { NgForm } from '@angular/forms'
 })
 export class InputComponent {
 
+    constructor(private hireValidationService: HireValidationService) {}
+
     sendInput(data:NgForm) {
-        console.log(data)
+        this.hireValidationService.validateHiring(data);
     }
 }
