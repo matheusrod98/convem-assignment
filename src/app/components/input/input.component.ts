@@ -16,12 +16,5 @@ export class InputComponent {
 
     sendInput(data:NgForm) {
         this.hireValidationService.validateHiring(data);
-        if (HireValidationService.isHired.hired == "success") {
-            this.router.navigate(['success']);
-        }
-        else {
-            this.router.navigate(['error']);
-        }
-
     }
 }
