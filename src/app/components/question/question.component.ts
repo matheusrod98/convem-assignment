@@ -17,6 +17,6 @@ export class QuestionComponent {
     constructor(public hireValidationService: HireValidationService) {}
 
     sendInput(data:NgForm) {
-        this.hireValidationService.validateHiring(data);
+        // this.hireValidationService.validateHiring(data);
     }
 }

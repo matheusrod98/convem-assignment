@@ -5,6 +5,9 @@ import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
 import { hiringInfo } from '../models/hiringInfo.model';
+import { userInput } from '../models/userInput.model';
+
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,25 +15,34 @@ import { hiringInfo } from '../models/hiringInfo.model';
 
 export class HireValidationService {
 
-  private apiUrl = 'https://637d5b4916c1b892ebcbf89a.mockapi.io/hiredValidation/'
-
   constructor(private http:HttpClient, private router: Router) {}
 
-  getData(data: string): Observable<any> {
-    return this.http.get<hiringInfo>(this.apiUrl.concat(data));
-  }
-
-  validateHiring(data: NgForm): void {
-    this.getData(((data as unknown) as string).toUpperCase()).subscribe(
-      (res: hiringInfo) => {
-        if (res.hired == "success") {
-          this.router.navigate(['success']);
-	}
-      }, 
-      (err: any) => {
+  // getData(data: string): Observable<any> {
+  //   return this.http.post<hiringInfo>(this.apiUrl, data);
+  // }
+  
+  validateHiring(data: userInput) {
+   this.http.post(environment.BASE_URL + '/v1/hired', data).subscribe(
+      (res) => {
+        console.log(res);
+      },
+      (err) => {
         console.error(err);
-        this.router.navigate(['error']);
       }
     )
   }
+
+ //  validateHiring(data: NgForm): void {
+ //    this.getData(((data as unknown) as string).toUpperCase()).subscribe(
+ //      (res: hiringInfo) => {
+ //        if (res.hired == "success") {
+ //          this.router.navigate(['success']);
+	// }
+ //      }, 
+ //      (err: any) => {
+ //        console.error(err);
+ //        this.router.navigate(['error']);
+ //      }
+ //    )
+ //  }
 }

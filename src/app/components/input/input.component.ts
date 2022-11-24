@@ -1,6 +1,4 @@
-import { Component, Input } from '@angular/core';
-import { NgForm } from '@angular/forms'
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
 
 import { HireValidationService } from '../../services/hire-validation.service';
 
@@ -12,9 +10,9 @@ import { HireValidationService } from '../../services/hire-validation.service';
 
 export class InputComponent {
 
-    constructor(public hireValidationService: HireValidationService, private router: Router) {}
+    constructor(public hireValidationService: HireValidationService) {}
 
-    sendInput(data:NgForm) {
+    sendInput(data: { userInput: string }) {
         this.hireValidationService.validateHiring(data);
     }
 }
