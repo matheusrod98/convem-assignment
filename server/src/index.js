@@ -14,7 +14,7 @@ app.post('/v1/hired', (req, res) => {
     const input = req.body;
 
     if (!input) {
-        res.status(400).send({ message: 'Invalid request: no message body' })
+        res.status(400).send({ Error: 'Invalid request: no message body' })
     }
 
     else if (input.userInput.toUpperCase() == "SIM") {
@@ -25,3 +25,5 @@ app.post('/v1/hired', (req, res) => {
         res.status(210).send({ hired: "Error" });
     }
 })
+
+app.use((err, req, res, next) => res.status(500).send({ Error: err.message }))
