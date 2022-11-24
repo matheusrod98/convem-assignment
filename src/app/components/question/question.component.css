@@ -1,11 +1,24 @@
 .wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display:flex;
+    /* position: absolute; */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* display:flex; */
     flex-direction: column-reverse;
 }
 
-.input-container {
-    display: flex;
+.user-input-container {
+    /* display: flex; */
+    position: absolute;
+    top: 55%;
+    left: 35%;
+    width: 200px;
+    padding: 20px;
+}
+
+.question {
+    /* display: flex; */
+    position: absolute;
+    top: 30%;
+    left: 26%;
+    font-size: 350%;
 }

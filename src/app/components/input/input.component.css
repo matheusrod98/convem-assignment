@@ -1,0 +1,21 @@
+/* .submit-button { */
+/* } */
+
+.input-form {
+    width:500px;
+    border-radius:15px;
+    height:30px;
+}
+
+::placeholder {
+   text-align: center; 
+}
+
+.button {
+    width:250px;
+    height:25px;
+    border-radius:15px;
+    position:absolute;
+    top:80%;
+    left:60%;
+}
