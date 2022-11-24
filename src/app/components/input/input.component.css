@@ -12,10 +12,10 @@
 }
 
 .button {
-    width:250px;
+    width:80px;
     height:25px;
     border-radius:15px;
     position:absolute;
     top:80%;
-    left:60%;
+    left:95%;
 }
