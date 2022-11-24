@@ -4,7 +4,7 @@ This repos is intended to store the files from the internship assignment of Conv
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Netlify deployment
 This site was deploy here: https://convem-assignment.netlify.app/
