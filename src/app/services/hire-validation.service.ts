@@ -16,33 +16,25 @@ import { environment } from '../environments/environment';
 export class HireValidationService {
 
   constructor(private http:HttpClient, private router: Router) {}
-
-  // getData(data: string): Observable<any> {
-  //   return this.http.post<hiringInfo>(this.apiUrl, data);
-  // }
   
+  getData(data: userInput): Observable<any> {
+    return this.http.post<hiringInfo>(environment.BASE_URL + '/v1/hired', data);
+  }
+
   validateHiring(data: userInput) {
-   this.http.post(environment.BASE_URL + '/v1/hired', data).subscribe(
-      (res) => {
-        console.log(res);
+    this.getData(data).subscribe(
+      (res: hiringInfo) => {
+        if (res.hired == "success") {
+          this.router.navigate(['success']);
+        }
+        else {
+          this.router.navigate(['error']);
+        }
       },
-      (err) => {
+      (err: any) => {
         console.error(err);
+        this.router.navigate(['error']);
       }
     )
   }
-
- //  validateHiring(data: NgForm): void {
- //    this.getData(((data as unknown) as string).toUpperCase()).subscribe(
- //      (res: hiringInfo) => {
- //        if (res.hired == "success") {
- //          this.router.navigate(['success']);
-	// }
- //      }, 
- //      (err: any) => {
- //        console.error(err);
- //        this.router.navigate(['error']);
- //      }
- //    )
- //  }
 }
