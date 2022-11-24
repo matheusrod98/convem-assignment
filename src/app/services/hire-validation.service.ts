@@ -28,8 +28,8 @@ export class HireValidationService {
 	}
       }, 
       (err: any) => {
-	console.error(err);
-	this.router.navigate(['error']);
+        console.error(err);
+        this.router.navigate(['error']);
       }
     )
   }
